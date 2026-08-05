@@ -27,7 +27,12 @@ export default function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/30 to-accent-gold-dark/30 rounded-full blur-2xl"></div>
               <div className="relative w-full h-full rounded-full border-2 border-accent-gold/50 overflow-hidden">
                 <div className="w-full h-full bg-dark-layer flex items-center justify-center">
-                  <span className="text-accent-gold text-lg">Your Photo</span>
+                  <Image
+                   src="/images/protfolio.png"
+                   alt="Huda Noor"
+                   fill
+                   className="object-cover"
+                    priority/>
                 </div>
               </div>
             </div>
