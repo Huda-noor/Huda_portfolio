@@ -25,10 +25,10 @@ export default function About() {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               <p className="text-lg text-text-secondary mb-6 leading-relaxed">
-                I'm an AI Automation Engineer and AI Agent Developer specializing in building intelligent automation systems that leverage the power of generative AI and modern workflow orchestration.
+                I am an AI Automation Engineer and AI Agent Developer specializing in building intelligent automation systems that leverage the power of generative AI and modern workflow orchestration.
               </p>
               <p className="text-lg text-text-secondary mb-6 leading-relaxed">
-                With expertise in n8n, AI agents, and LLM integration, I've designed and deployed over 100 production workflows that deliver significant efficiency improvements for businesses.
+                With expertise in n8n, AI agents, and LLM integration, I have designed and deployed over 100 production workflows that deliver significant efficiency improvements for businesses.
               </p>
               <p className="text-lg text-text-secondary leading-relaxed">
                 My focus is on creating sophisticated automation solutions that combine multiple technologies—from API orchestration to multi-agent AI systems—to solve real-world business challenges.

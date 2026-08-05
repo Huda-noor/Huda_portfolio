@@ -84,7 +84,7 @@ export default function Contact() {
 
               <div className="p-4 bg-dark-primary rounded-lg border border-accent-gold/20">
                 <p className="text-text-secondary text-sm">
-                  Available for remote work globally. Let's discuss your AI automation needs!
+                  Available for remote work globally. Let&apos;s discuss your AI automation needs!
                 </p>
               </div>
             </motion.div>
