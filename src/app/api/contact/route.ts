@@ -26,12 +26,13 @@ export async function POST(request: NextRequest) {
     if (!apiKey) {
       console.error('RESEND_API_KEY is not set')
       return NextResponse.json(
-        { error: 'Email service not configured. Please contact admin.' },
+        { error: 'Email service not configured.' },
         { status: 500 }
       )
     }
 
     // Send email using Resend API
+    // SANDBOX MODE: Can only send to sweethudanoor@gmail.com
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -40,7 +41,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         from: 'onboarding@resend.dev',
-        to: 'huda11.03noor@gmail.com',
+        to: 'sweethudanoor@gmail.com', // ✅ YOUR RESEND EMAIL
         replyTo: email,
         subject: `New Portfolio Message from ${name}`,
         html: `
@@ -54,8 +55,7 @@ export async function POST(request: NextRequest) {
             </p>
             <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
             <p style="font-size: 12px; color: #666;">
-              <strong>Reply-To:</strong> ${email}<br>
-              This email was sent from your portfolio contact form.
+              Reply to this email to respond to: ${email}
             </p>
           </div>
         `,
@@ -65,23 +65,22 @@ export async function POST(request: NextRequest) {
     const data = await response.json()
 
     if (!response.ok) {
-      console.error('Resend API error:', data)
+      console.error('Resend error:', data)
       return NextResponse.json(
         { error: data.message || 'Failed to send email' },
         { status: 500 }
       )
     }
 
-    // Success
     return NextResponse.json({
       success: true,
       message: 'Email sent successfully!',
       id: data.id,
     })
   } catch (error) {
-    console.error('Contact form error:', error)
+    console.error('Error:', error)
     return NextResponse.json(
-      { error: 'Failed to process request. Please try again.' },
+      { error: 'Failed to process request.' },
       { status: 500 }
     )
   }
